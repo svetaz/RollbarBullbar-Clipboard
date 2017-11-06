@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:\Users\Filip 3\Desktop\Projects\ViewPagerwithTabLayout\ViewPagerExample.iml" filepath="C:\Users\Filip 3\Desktop\Projects\ViewPagerwithTabLayout\ViewPagerExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerwithTabLayout.iml" filepath="$PROJECT_DIR$/ViewPagerwithTabLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Filip 3\Desktop\Projects\ViewPagerwithTabLayout\app\app.iml" filepath="C:\Users\Filip 3\Desktop\Projects\ViewPagerwithTabLayout\app\app.iml" />
+    </modules>
+  </component>
+</project>
