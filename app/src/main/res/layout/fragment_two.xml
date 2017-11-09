@@ -1,21 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/holo_red_dark">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:fab="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerInParent="true"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:onClick="onClick2"
-        android:text="Poštovani , \n\nNajbolje je da se javite Nebojši na 069/ 110 10 45 u periodu između 08h i 23h svakog dana (i vikendom), i on će Vam pružiti najdetaljnije moguće informacije u vezi željene opreme za Vaš automobil.  \n\nS' poštovanjem,\nRollBar-BullBar Team \nBeograd"
-        android:textColor="#fff"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FEFEFE"
+        >
+
+        <ImageView
+
+            android:id="@+id/slika"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/step"
+            android:layout_alignParentTop="true"
+
+            />
+
+
+        <TextView
+            android:id="@+id/tekst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/slika"
+
+            android:layout_alignParentRight="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Poštovani , \n\nNajbolje je da se javite Nebojši na 069/ 110 10 45 u periodu između 08h i 23h svakog dana (i vikendom), i on će Vam pružiti najdetaljnije moguće informacije u vezi željene opreme za Vaš automobil.  \n\nS' poštovanjem,\nRollBar-BullBar Team \nBeograd"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
 
 
 </RelativeLayout>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:onClick="onClick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/send"
+        fab:fab_colorNormal="@color/colorFAB"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_colorRipple="@color/colorPrimary"/>
+
+</FrameLayout>

@@ -1,10 +1,14 @@
 package com.gadgetsaint.viewpagerexample;
 
+import android.app.Application;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Handler;
+import android.support.annotation.MainThread;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +17,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.gadgetsaint.viewpagerexample.fragments.FragmentOne;
 import com.gadgetsaint.viewpagerexample.fragments.FragmentThree;
@@ -40,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         //An array containing your icons from the drawable directory
         final int[] ICONS = new int[]{
-                R.drawable.icon_1,
-                R.drawable.icon_2,
+                R.drawable.clipboard,
+                R.drawable.globe,
                 R.drawable.icon_3
         };
 
@@ -88,17 +93,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick(View view) {
+    public void onClick1(View view) {
 
         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("label", "Poštovani , \n\nNajbolje je da se javite Nebojši na 069/110 10 45 u periodu između 08h i "
                 + "23h svakog dana (i vikendom), i on će Vam " + "pružiti najdetaljnije moguće informacije " + "u vezi željene opreme za Vaš " +
                 "automobil.  \n\nS poštovanjem, \nRollbar-Bullbar \nBeograd");
         clipboard.setPrimaryClip(clip);
+        Toast.makeText(MainActivity.this,"Your message has been copied to clipboard.",Toast.LENGTH_LONG).show();
+
+        /*Handler handler = new Handler();
+
+        *//*handler.postDelayed(new Runnable() {
+            public void run() {
+
+
+
+
+
+
+                finish();
+
+            }
+        }, 500);*/
 
 
         finish();
-
 
 
 
@@ -114,6 +134,21 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://www.kupujemprodajem.com/message.php?action=inbox"));
         startActivity(i);
+
+        Toast.makeText(MainActivity.this,"Your message has been copied to clipboard.Starting KP inbox.",Toast.LENGTH_LONG).show();
+
+
+        //WHATSAPP DIRECT MESSAGE
+        /*String toNumber = "+381 69110 1045"; // contains spaces.
+        toNumber = toNumber.replace("+", "").replace(" ", "");
+
+        Intent sendIntent = new Intent("android.intent.action.MAIN");
+        sendIntent.putExtra("jid", toNumber + "@s.whatsapp.net");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, " ");
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.setPackage("com.whatsapp");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);*/
 
 
         finish();
@@ -131,8 +166,11 @@ public class MainActivity extends AppCompatActivity {
                 "automobil.  \n\nS poštovanjem, \nRollbar-Bullbar \nBeograd");
         clipboard.setPrimaryClip(clip);
         PackageManager pm = getPackageManager();
+
+        Toast.makeText(MainActivity.this,"Your message has been copied to clipboard.Starting Google Inbox.",Toast.LENGTH_LONG).show();
         Intent intent = pm.getLaunchIntentForPackage("com.google.android.apps.inbox");
         startActivity(intent);
+
 
 
         finish();
